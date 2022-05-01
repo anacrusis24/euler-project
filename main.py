@@ -1,6 +1,6 @@
 '''
 ---------- main.py ----------
-Time    :  2022/04/30 22:47:30
+Time    :  2022/05/01 02:28:36
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -12,7 +12,8 @@ Desc    :  The main program to see the answers to the Euler problems
 import numpy as np
 import os
 from euler_problem.euler_problem_1_10 import *
-from problem_statement import *
+from display.problem_statement import *
+from display.display_problem import *
 
 
 ##### Make Exceptions ######
@@ -26,7 +27,7 @@ class NotYesNo(Exception):
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = len(os.listdir('euler_problem\\')) - 2
+    num_problems = 2
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -57,12 +58,13 @@ if __name__ == '__main__':
         
         ### Euler Problem 1 ###
         if problem_to_solve == 1:
-            # problem_statement = '''If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.\nFind the sum of all the multiples of 3 or 5 below 1000.'''
             sum_mult_3_5 = sum_multiples(np.array([3, 5]), 1000)
-            print('\n', problem_header)
-            print(problem_statement_1, '\n')
-            print(f'The answer to Euler problem {problem_to_solve} is:', sum_mult_3_5, '\n')
+            display_results(problem_header, problem_statement_1, problem_to_solve, sum_mult_3_5)
         
+        ### Euler Problem 2 ###
+        elif problem_to_solve == 2:
+            fib_sum = fibonacci_sum(4000000)
+            display_results(problem_header, problem_statement_2, problem_to_solve, fib_sum)
 
         # Let user decide weather to keep solving or not 
         while True:
