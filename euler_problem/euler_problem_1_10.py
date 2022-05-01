@@ -1,17 +1,17 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/01 12:00:59
+Time    :  2022/05/01 13:17:31
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
 Contact :  ajv131@gmail.com
 Desc    :  Function to solve Euler problems 1 - 10
 '''
-'2022/05/01 02:28:36'
+
 
 ##### Imports #####
 import numpy as np
-
+from tqdm import tqdm
 
 ##### Define Functions #####
 def sum_multiples(multiples, max_num):
@@ -104,3 +104,56 @@ def prime_factor(num):
     max_factor = int(np.max(factors))
 
     return max_factor
+
+
+def palindrome(n_digit):
+    '''
+    @palindrome
+    Function calculates the largest palindrome made from the product of 2 n_digit numbers
+    
+    @Input
+    n_digit: the number of digit numbers to be used in product
+
+    @Output
+    max_palindrome: the largest palindrome
+    '''
+    # Initialize list of palindromes
+    palindromes = np.array([])
+    
+    # Get start and end numbers
+    start_num = '1'
+    end_num = '9'
+
+    # Add the correct amount of 0s or 9s
+    for i in range(1, n_digit):
+        start_num += '0'
+        end_num += '9'
+
+    # Convert to int
+    start_num = int(start_num)
+    end_num = int(end_num)
+
+    for i in tqdm(range(start_num, end_num + 1), desc='CALCULATING ANSWER'):
+        for j in range(i, end_num + 1):
+            # Calculate the product
+            product = i * j
+
+            # Check if palindrome
+            is_palindrome = True
+            str_product = str(product)
+            len_str = len(str_product)
+            max_indx = int(len_str / 2)
+
+            for k in range(max_indx):
+                if str_product[k] != str_product[len_str - 1 - k]:
+                    is_palindrome = False
+                    break
+
+            # If product is a palindrome                
+            if is_palindrome:
+                palindromes = np.append(palindromes, product)
+
+    # Find the max palindrome
+    max_palindrome = int(np.max(palindromes))
+
+    return max_palindrome

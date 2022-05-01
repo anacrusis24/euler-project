@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/01 12:00:59
+Time    :  2022/05/01 13:17:31
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -32,3 +32,7 @@ def test_euler_2():
 def test_euler_3():
     lrg_factor = prime_factor(13195)
     assert lrg_factor == 29
+
+def test_euler_4():
+    lrg_palindrome = palindrome(2)
+    assert lrg_palindrome == 9009

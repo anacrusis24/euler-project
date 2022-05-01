@@ -1,6 +1,6 @@
 '''
 ---------- problem_statement.py ----------
-Time    :  2022/05/01 12:00:59
+Time    :  2022/05/01 13:17:31
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -19,3 +19,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 problem_statement_3 = '''The prime factors of 13195 are 5, 7, 13 and 29.
 
 What is the largest prime factor of the number 600851475143 ?'''
+
+problem_statement_4 = '''A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.'''
