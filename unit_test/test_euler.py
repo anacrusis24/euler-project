@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/01 02:28:36
+Time    :  2022/05/01 12:00:59
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -19,6 +19,7 @@ sys.path.append(path)
 
 from euler_problem.euler_problem_1_10 import *
 
+
 ##### Unit Tests #####
 def test_euler_1():
     sum_mult_3_5 = sum_multiples([3, 5], 10)
@@ -27,3 +28,7 @@ def test_euler_1():
 def test_euler_2():
     fib_sum = fibonacci_sum(100)
     assert fib_sum == 44
+
+def test_euler_3():
+    lrg_factor = prime_factor(13195)
+    assert lrg_factor == 29
