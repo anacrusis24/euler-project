@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/04/30 21:10:46
+Time    :  2022/05/01 02:28:36
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
