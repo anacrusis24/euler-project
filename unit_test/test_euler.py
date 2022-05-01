@@ -23,3 +23,7 @@ from euler_problem.euler_problem_1_10 import *
 def test_euler_1():
     sum_mult_3_5 = sum_multiples([3, 5], 10)
     assert sum_mult_3_5 == 23
+
+def test_euler_2():
+    fib_sum = fibonacci_sum(100)
+    assert fib_sum == 44
