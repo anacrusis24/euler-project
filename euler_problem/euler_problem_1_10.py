@@ -8,9 +8,6 @@ Contact :  ajv131@gmail.com
 Desc    :  Function to solve Euler problems 1 - 10
 '''
 
-##### Imports #####
-import numpy as np 
-
 ##### Define Functions #####
 def sum_multiples(multiples, max_num):
     '''
