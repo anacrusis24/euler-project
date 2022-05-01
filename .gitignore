@@ -1,0 +1,6 @@
+# Ignore coverage
+.coverage
+
+# Ignore cache files
+__pycache__
+.pytest_cache
