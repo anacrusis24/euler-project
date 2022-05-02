@@ -4,3 +4,6 @@
 # Ignore cache files
 __pycache__
 .pytest_cache
+
+# Recovery Key
+recovery_key.txt
