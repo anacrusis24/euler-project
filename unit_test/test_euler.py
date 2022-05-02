@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/01 13:17:31
+Time    :  2022/05/01 14:38:56
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -20,7 +20,7 @@ sys.path.append(path)
 from euler_problem.euler_problem_1_10 import *
 
 
-##### Unit Tests #####
+##### Euler Tests #####
 def test_euler_1():
     sum_mult_3_5 = sum_multiples([3, 5], 10)
     assert sum_mult_3_5 == 23
@@ -30,9 +30,20 @@ def test_euler_2():
     assert fib_sum == 44
 
 def test_euler_3():
-    lrg_factor = prime_factor(13195)
+    lrg_factor = greatest_prime_factor(13195)
     assert lrg_factor == 29
 
 def test_euler_4():
     lrg_palindrome = palindrome(2)
     assert lrg_palindrome == 9009
+
+def test_euler_5():
+    sml_mult = smallest_multiple(10)
+    assert sml_mult == 2520
+
+
+##### My Tests #####
+def test_prime_factors():
+    pri_factors = prime_factors(2520)
+    arr = np.array([2, 2, 2, 3, 3, 5, 7])
+    assert (pri_factors == arr).all()

@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/01 13:17:31
+Time    :  2022/05/01 14:38:56
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -11,6 +11,7 @@ Desc    :  Function to solve Euler problems 1 - 10
 
 ##### Imports #####
 import numpy as np
+from collections import Counter
 from tqdm import tqdm
 
 ##### Define Functions #####
@@ -72,7 +73,40 @@ def fibonacci_sum(max_num):
     return fib_sum
 
 
-def prime_factor(num):
+def prime_factors(num):
+    '''
+    @prime_factors
+    Function calculates and returns the prime factors of the given number
+    
+    @Input
+    num: the number to find the prime factors of
+    
+    @Output
+    prime_factors: the list of prime factors
+    '''
+    # Initialize empty list for the prime factors
+    prime_factors_arr = np.array([], dtype=int)
+
+    # Find how many times 2 is a factor
+    cur_num = num
+    while cur_num % 2 == 0:
+        prime_factors_arr = np.append(prime_factors_arr, 2)
+        cur_num = cur_num / 2
+
+    # Run the loop to find the non 2 prime factors
+    i = 3
+    while cur_num > 1:
+        # If i is a prime factor
+        if cur_num % i == 0:
+            prime_factors_arr = np.append(prime_factors_arr, i)
+            cur_num = cur_num / i
+        else:
+            i += 1
+
+    return prime_factors_arr
+
+
+def greatest_prime_factor(num):
     '''
     @prime_factor
     Function calculates the largest prime factor of the given number
@@ -84,21 +118,7 @@ def prime_factor(num):
     max_factor: the largest prime factor of the number
     '''
     # Initialize the current greatest factor, max possible factor, and list of numbers
-    factors = np.array([])
-    max_possible_factor = int(np.sqrt(num))
-    num_list = np.arange(0, max_possible_factor + 1, 1)
-
-    # Run the loop to find the greatest prime factor
-    for i in range(2, max_possible_factor):
-        if num_list[i] != 0:
-            # Set all the multiples of the lowest prime factor to 0
-            num_list[num_list[i::i]] = 0
-            num_list[i] = i
-
-            # If it was a prime factor
-            if num % i == 0:
-                # Add it to the list
-                factors = np.append(factors, num_list[i])
+    factors = prime_factors(num)
     
     # Fund the max factor
     max_factor = int(np.max(factors))
@@ -157,3 +177,33 @@ def palindrome(n_digit):
     max_palindrome = int(np.max(palindromes))
 
     return max_palindrome
+
+
+def smallest_multiple(max_num):
+    '''
+    @divisible_all
+    Function finds the smallest number that is divisble by all integers up to the max_num (inclusive)
+    
+    @Input
+    max_num: the max factor of the smallest number
+
+    @Output
+    min_num: the smalles number that is divisible
+    '''
+    # Initialize arrays
+    cur_arr = np.array([])
+    num_arr = np.arange(2, max_num + 1, 1)
+
+    # Calculate how many of the prime factors to add
+    for num in num_arr:
+        # Calculate the prime factors
+        prime_factors_arr = prime_factors(num)
+
+        # Add the difference in prime factors to the list   
+        diff = list((Counter(prime_factors_arr) - Counter(cur_arr)).elements())
+        cur_arr = np.append(cur_arr, diff)
+
+    # Calculate the minimum number
+    min_num = int(np.prod(cur_arr))
+
+    return min_num

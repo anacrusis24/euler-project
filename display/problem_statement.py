@@ -1,6 +1,6 @@
 '''
 ---------- problem_statement.py ----------
-Time    :  2022/05/01 13:17:31
+Time    :  2022/05/01 14:38:56
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -23,3 +23,7 @@ What is the largest prime factor of the number 600851475143 ?'''
 problem_statement_4 = '''A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two 3-digit numbers.'''
+
+problem_statement_5 = '''2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?'''
