@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/01 14:38:56
+Time    :  2022/05/02 21:00:09
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -207,3 +207,31 @@ def smallest_multiple(max_num):
     min_num = int(np.prod(cur_arr))
 
     return min_num
+
+
+def sqr_sum_sqr(max_num):
+    '''
+    @sqr_sum_sqr
+    Function computes the difference between the square of the sums and the sum of squares of all natural numbers up to max_num
+    
+    @Input
+    max_num: the maximum number to include in the sums
+    
+    @Output
+    diff: the difference between the two values
+    '''
+    #Intialize values
+    sum_sqr = 0
+    sqr_sum = 0
+
+    # Calculate the sum of square and square of sums
+    for i in range(1, max_num + 1):
+        sum_sqr += i**2
+        sqr_sum += i
+    
+    sqr_sum = sqr_sum**2
+
+    # Calculate the difference
+    diff = sqr_sum - sum_sqr
+
+    return diff

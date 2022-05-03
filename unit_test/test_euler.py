@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/01 14:38:56
+Time    :  2022/05/02 21:00:09
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -41,6 +41,9 @@ def test_euler_5():
     sml_mult = smallest_multiple(10)
     assert sml_mult == 2520
 
+def test_euler_6():
+    diff = sqr_sum_sqr(10)
+    assert diff == 2640
 
 ##### My Tests #####
 def test_prime_factors():

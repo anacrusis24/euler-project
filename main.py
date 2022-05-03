@@ -1,6 +1,6 @@
 '''
 ---------- main.py ----------
-Time    :  2022/05/01 14:38:56
+Time    :  2022/05/02 21:00:09
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -27,7 +27,7 @@ class NotYesNo(Exception):
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 5
+    num_problems = 6
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -80,6 +80,12 @@ if __name__ == '__main__':
         elif problem_to_solve == 5:
             sml_mult = smallest_multiple(20)
             display_results(problem_header, problem_statement_5, problem_to_solve, sml_mult)
+
+        ### Euler Problem 6 ###
+        elif problem_to_solve == 6:
+            diff = sqr_sum_sqr(100)
+            display_results(problem_header, problem_statement_6, problem_to_solve, diff)
+
 
         # Let user decide weather to keep solving or not 
         while True:

@@ -1,6 +1,6 @@
 '''
 ---------- problem_statement.py ----------
-Time    :  2022/05/01 14:38:56
+Time    :  2022/05/02 21:00:09
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -27,3 +27,17 @@ Find the largest palindrome made from the product of two 3-digit numbers.'''
 problem_statement_5 = '''2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?'''
+
+problem_statement_6 = '''The sum of the squares of the first ten natural numbers is,
+
+                    1^2 + 2^2 + ... + 10^2 = 385
+
+The square of the sum of the first ten natural numbers is,
+
+                    (1 + 2 + ... + 10)^2 = 55^2 = 3025
+
+Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is
+
+                    3025 - 385 = 2640
+
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.'''
