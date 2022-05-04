@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/02 21:00:09
+Time    :  2022/05/03 21:36:38
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -235,3 +235,51 @@ def sqr_sum_sqr(max_num):
     diff = sqr_sum - sum_sqr
 
     return diff
+
+
+def list_primes(max_num):
+    '''
+    @list_primes
+    Function lists all of the prime numbers beneath the max_num (inclusive)
+    
+    @Input
+    max_num: the max possible prime
+    
+    @Output
+    primes_list: the list of prime numbers
+    '''
+    # Create empty list of bools
+    bool_list = np.ones(max_num, dtype=int)
+
+    for i in range(2, int(np.sqrt(max_num)) + 1):
+        if bool_list[i]:
+            # Set the multiple to 0 but keep the original number
+            bool_list[::i] = 0
+            bool_list[i] = i
+
+    primes_list = np.where(bool_list != 0)
+    primes_list = np.delete(primes_list, 0)
+
+    return primes_list
+
+
+def nth_prime(n, max_num=1000000):
+    '''
+    @nth_prime
+    Function returns the nth prime number (primes starting as 2, 3, 5, ...)
+    
+    @Input
+    n: the prime number to find 
+    
+    @Output
+    n_prime: the nth prime
+    '''
+    primes_list = list_primes(max_num)
+    next_max = 10 * max_num
+
+    if len(primes_list) >= n:
+        n_prime = primes_list[n - 1]
+    else:
+        return nth_prime(n, max_num=next_max)    
+
+    return n_prime
