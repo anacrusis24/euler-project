@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/03 21:36:38
+Time    :  2022/05/04 22:36:19
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -45,6 +45,14 @@ def test_euler_6():
     diff = sqr_sum_sqr(10)
     assert diff == 2640
 
+def test_euler_7():
+    n_prime = nth_prime(6)
+    assert n_prime == 13
+
+def test_euler_8():
+    product = n_product(n=4)
+    assert product == 5832
+
 
 ##### My Tests #####
 def test_prime_factors():
@@ -60,8 +68,8 @@ def test_list_primes():
     assert (primes == arr).all()
 
 def test_nth_prime():
-    n_prime = nth_prime(6)
-    assert n_prime == 13
+    n_prime = nth_prime(1)
+    assert n_prime == 2
 
 def test_nth_prime_exceed():
     n_prime = nth_prime(80000)
