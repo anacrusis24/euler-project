@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/04 22:36:19
+Time    :  2022/05/20 09:43:48
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -330,7 +330,7 @@ def n_product(n):
     product_list = np.array([])
     num_products = len(new_str) - n
 
-    for i in range(num_products+1):
+    for i in range(num_products + 1):
         # Get the substring to calculate the product
         sub_str = new_str[i:(n + i)]
         running_product = 1
@@ -347,3 +347,68 @@ def n_product(n):
     max_product = int(np.max(product_list))
 
     return max_product
+
+
+def find_factor_pairs(num):
+    '''
+    @find_factor_pairs
+    Function finds all of the factor pairs for the given number
+    
+    @Input
+    num: the number to find the factor pairs
+    
+    @Output
+    factor_pairs: the factor pairs of the number
+    '''
+    # Create empty array to hold factor pairs
+    factor_pairs = []
+
+    # Generate the pairs
+    for i in range(1, int(np.sqrt(num)) + 1):
+        # If evenly divisible
+        if num % i == 0:
+            pair = [i, int(num/i)]
+            factor_pairs.append(pair)
+
+    return factor_pairs
+    
+
+def pyth_prod_triplet(sum_triplet):
+    '''
+    @pyth_prod_triplet
+    Function finds the product of the Pythagorean triplet whose sum is sum_triplet
+    
+    @Input
+    sum_triplet: the sum of the Pythagorean triplet
+    
+    @Output
+    prod_triplet: the product of the Pythagorean triplet
+    '''
+    # Var to hold current triplet
+    curr_triplet = np.array([0, 0, 0])
+    r = 2
+    
+    # Generate triplets
+    while (np.sum(curr_triplet) != sum_triplet) and (curr_triplet[0] <= sum_triplet):
+        factors = find_factor_pairs(r**2/2)
+        for pair in factors:
+            # Find s and t
+            s = pair[0]
+            t = pair[1]
+
+            # Find a, b, c
+            a = r + s 
+            b = r + t 
+            c = r + s + t
+
+            curr_triplet = np.array([a, b, c])
+
+            if np.sum(curr_triplet) == sum_triplet:
+                break
+        
+        r += 2
+
+    # Find product of triplet
+    prod_triplet =  int(np.prod(curr_triplet))
+
+    return prod_triplet

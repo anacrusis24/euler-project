@@ -1,12 +1,13 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/04 22:36:19
+Time    :  2022/05/20 09:43:48
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
 Contact :  ajv131@gmail.com
 Desc    :  The unit tests for Euler problems
 '''
+''
 
 ##### Imports #####
 import pytest
@@ -50,8 +51,12 @@ def test_euler_7():
     assert n_prime == 13
 
 def test_euler_8():
-    product = n_product(n=4)
+    product = n_product(4)
     assert product == 5832
+
+def test_euler_9():
+    pyth_trip_prod = pyth_prod_triplet(12)
+    assert pyth_trip_prod == 60
 
 
 ##### My Tests #####
@@ -74,3 +79,11 @@ def test_nth_prime():
 def test_nth_prime_exceed():
     n_prime = nth_prime(80000)
     assert n_prime == 1020379
+
+def test_pyth_prod_triplet():
+    pyth_trip_prod = pyth_prod_triplet(40)
+    assert pyth_trip_prod == 2040
+
+def test_find_factor_pairs():
+    pairs = find_factor_pairs(18)
+    assert pairs == [[1, 18], [2, 9], [3, 6]]
