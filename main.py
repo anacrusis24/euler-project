@@ -52,52 +52,52 @@ if __name__ == '__main__':
         ### Euler Problem 1 ###
         if problem_to_solve == 1:
             sum_mult_3_5 = sum_multiples(np.array([3, 5]), 1000)
-            display_results(problem_header, problem_statement_1, problem_to_solve, sum_mult_3_5)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_1.txt', problem_to_solve, sum_mult_3_5)
         
         ### Euler Problem 2 ###
         elif problem_to_solve == 2:
             fib_sum = fibonacci_sum(4000000)
-            display_results(problem_header, problem_statement_2, problem_to_solve, fib_sum)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_2.txt', problem_to_solve, fib_sum)
 
         ### Euler Problem 3 ###
         elif problem_to_solve == 3:
             lrg_factor = greatest_prime_factor(600851475143)
-            display_results(problem_header, problem_statement_3, problem_to_solve, lrg_factor)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_3.txt', problem_to_solve, lrg_factor)
         
         ### Euler Problem 4 ###
         elif problem_to_solve == 4:
             lrg_palindrome = palindrome(3)
-            display_results(problem_header, problem_statement_4, problem_to_solve, lrg_palindrome)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_4.txt', problem_to_solve, lrg_palindrome)
 
         ### Euler Problem 5 ###
         elif problem_to_solve == 5:
             sml_mult = smallest_multiple(20)
-            display_results(problem_header, problem_statement_5, problem_to_solve, sml_mult)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_5.txt', problem_to_solve, sml_mult)
 
         ### Euler Problem 6 ###
         elif problem_to_solve == 6:
             diff = sqr_sum_sqr(100)
-            display_results(problem_header, problem_statement_6, problem_to_solve, diff)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_6.txt', problem_to_solve, diff)
 
         ### Euler Problem 7 ###
         elif problem_to_solve == 7:
             nth_prime = nth_prime(10001)
-            display_results(problem_header, problem_statement_7, problem_to_solve, nth_prime)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_7.txt', problem_to_solve, nth_prime)
         
         ### Euler Problem 8 ###
         elif problem_to_solve == 8:
             product = n_product(13)
-            display_results(problem_header, problem_statement_8, problem_to_solve, product)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_8.txt', problem_to_solve, product)
 
         ### Euler Problem 9 ###
         elif problem_to_solve == 9:
             pyth_trip_prod = pyth_prod_triplet(1000)
-            display_results(problem_header, problem_statement_9, problem_to_solve, pyth_trip_prod)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_9.txt', problem_to_solve, pyth_trip_prod)
 
         ### Euler Problem 10 ###
         elif problem_to_solve == 10:
             prime_sum = sum_prime(2000000)
-            display_results(problem_header, problem_statement_10, problem_to_solve, prime_sum)
+            display_results(problem_header, 'display/problem_statements_1_10/problem_statement_10.txt', problem_to_solve, prime_sum)
 
 
         # Let user decide weather to keep solving or not 

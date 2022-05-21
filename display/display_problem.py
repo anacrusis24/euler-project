@@ -9,22 +9,28 @@ Desc    :  Function to cleanly display results
 '''
 
 ##### Define Functions #####
-def display_results(problem_header, problem_statement, problem_to_solve, answer):
+def display_results(problem_header, problem_statement_path, problem_to_solve, answer):
     '''
     @display_results
     Function prints the results of the of the euler test
     
     @Input
     problem_header: the display header for the test
-    problem_statement: the problem statement 
+    problem_statement_path: the problem statement file path
     problem_to_solve: the number of the euler problem
     answer: the answer to the problem
     
     @Output
     None
     '''
+    # Read the .txt file
+    with open(problem_statement_path) as f:
+        statement = f.read()
+
+    f.close()
+
     print('\n', problem_header)
-    print(problem_statement, '\n')
+    print(statement, '\n')
     print(f'The answer to Euler problem {problem_to_solve} is:', answer, '\n')
 
     return None
