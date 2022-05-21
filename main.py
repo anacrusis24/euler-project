@@ -14,14 +14,7 @@ import os
 from euler_problem.euler_problem_1_10 import *
 from display.problem_statement import *
 from display.display_problem import *
-
-
-##### Make Exceptions ######
-class NotInRange(Exception):
-    'Raised when euler problem input is not in range of completed problems'
-
-class NotYesNo(Exception):
-    'Raised when answer to continue is not y or n'
+from exception.exception import *
 
 
 ##### Main Program #####
