@@ -1,6 +1,6 @@
 '''
 ---------- test_euler.py ----------
-Time    :  2022/05/20 09:43:48
+Time    :  2022/05/21 12:49:51
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -58,6 +58,9 @@ def test_euler_9():
     pyth_trip_prod = pyth_prod_triplet(12)
     assert pyth_trip_prod == 60
 
+def test_euler_10():
+    prime_sum = sum_prime(10)
+    assert prime_sum == 17
 
 ##### My Tests #####
 def test_prime_factors():

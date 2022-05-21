@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_1_10.py ----------
-Time    :  2022/05/20 09:43:48
+Time    :  2022/05/21 12:49:51
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -390,6 +390,7 @@ def pyth_prod_triplet(sum_triplet):
     
     # Generate triplets
     while (np.sum(curr_triplet) != sum_triplet) and (curr_triplet[0] <= sum_triplet):
+        # Dickson's method for generating Pythagorean triplets
         factors = find_factor_pairs(r**2/2)
         for pair in factors:
             # Find s and t
@@ -412,3 +413,23 @@ def pyth_prod_triplet(sum_triplet):
     prod_triplet =  int(np.prod(curr_triplet))
 
     return prod_triplet
+
+
+def sum_prime(max_num):
+    '''
+    @sum_prime
+    Function sums all of the primes below the given number
+    
+    @Input
+    max_num: the max possible number to sum (not inclusive)
+    
+    @Output
+    prime_sum: the sum of primes
+    '''
+    # Make list of primes below maxnum
+    prime_list = np.array(list_primes(max_num))
+
+    # Sum the primes
+    prime_sum = np.sum(prime_list)
+
+    return prime_sum
