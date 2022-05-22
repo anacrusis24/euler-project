@@ -5,9 +5,9 @@ Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
 Contact :  ajv131@gmail.com
-Desc    :  The unit tests for Euler problems
+Desc    :  The unit tests for Euler problems 1 - 10
 '''
-''
+
 
 ##### Imports #####
 import pytest
