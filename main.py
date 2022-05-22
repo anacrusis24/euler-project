@@ -9,10 +9,14 @@ Desc    :  The main program to see the answers to the Euler problems
 '''
 
 ##### Imports #####
-import numpy as np
 import os
-from euler_problem.euler_problem_1_10 import *
-from euler_problem.euler_problem_11_20 import *
+import sys
+path = os.path.abspath('.\\euler_problem')
+sys.path.append(path)
+
+import numpy as np
+from euler_problem_1_10 import *
+from euler_problem_11_20 import *
 from display.display_problem import *
 from exception.exception import *
 
@@ -20,7 +24,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 11
+    num_problems = 12
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -103,6 +107,11 @@ if __name__ == '__main__':
         elif problem_to_solve == 11:
             max_prod = greatest_product(4)
             display_results(problem_header, 'display/problem_statements_11_20/problem_statement_11.txt', problem_to_solve, max_prod)
+
+        ### Euler Problem 12 ###
+        elif problem_to_solve == 12:
+            tri_num = tri_num_divisor(500)
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_12.txt', problem_to_solve, tri_num)
 
 
         # Let user decide weather to keep solving or not 

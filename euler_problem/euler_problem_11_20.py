@@ -11,6 +11,7 @@ Desc    :  Function to solve Euler problems 11 - 20
 
 ##### Imports #####
 import numpy as np
+from euler_problem_1_10 import find_factor_pairs
 
 ##### Define Functions #####
 def greatest_product(num_adjacent):
@@ -74,3 +75,33 @@ def greatest_product(num_adjacent):
     max_product = max(products)
 
     return max_product
+
+
+def tri_num_divisor(num_divisors):
+    '''
+    @tri_num_divisor
+    Function find the first triangle number with number of divisors greater than num_divisors 
+    
+    @Input
+    num_divisors: the number of divisors the triangle number should exceed
+    
+    @Output
+    tri_num: the first triangle number with the desired amount of divisors
+    '''
+    # Initialize variables
+    tri_number_found = False
+    curr_num = 1
+    curr_tri_num = 1
+
+    # Loop generates triangle numbers and checks factors for each new number
+    while not tri_number_found:
+        # Check the number of divisors of the current triangle number
+        divisors = np.count_nonzero(np.array(find_factor_pairs(curr_tri_num)))
+        if divisors > num_divisors:
+            break
+        
+        # Increment the numbers
+        curr_num += 1
+        curr_tri_num += curr_num
+
+    return curr_tri_num

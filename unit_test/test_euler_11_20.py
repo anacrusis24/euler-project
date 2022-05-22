@@ -5,7 +5,7 @@ Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
 Contact :  ajv131@gmail.com
-Desc    :  None
+Desc    :  The unit tests for Euler problems 11 - 20
 '''
 
 
@@ -15,13 +15,19 @@ import os
 import sys
 
 # Append path to see euler problems
-path = os.path.abspath('.')
+path = os.path.abspath('.\\euler_problem')
 sys.path.append(path)
 
-from euler_problem.euler_problem_11_20 import *
+from euler_problem_11_20 import *
 
 
 ##### Euler Tests #####
 def test_euler_11():
     max_prod = greatest_product(2)
-    assert max_prod == 9306
+    assert max_prod == 9603
+
+def test_euler_12():
+    tri_num = tri_num_divisor(5)
+    assert tri_num == 28
+
+##### My Tests #####
