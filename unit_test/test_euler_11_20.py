@@ -1,6 +1,6 @@
 '''
 ---------- test_euler_11_20.py ----------
-Time    :  2022/05/21 17:49:11
+Time    :  2022/05/22 09:14:46
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -37,6 +37,10 @@ def test_euler_13():
 def test_euler_14():
     long_chain_num = longest_collatz_chain(5)
     assert long_chain_num == 3
+
+def test_euler_15():
+    paths = lattice_paths(2, 2)
+    assert paths == 6
     
 ##### My Tests #####
 def test_collatz_sequence():

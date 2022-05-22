@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_11_20.py ----------
-Time    :  2022/05/21 17:48:27
+Time    :  2022/05/22 09:14:46
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -302,3 +302,29 @@ def longest_collatz_chain(max_start_num):
             long_chain_num = i
 
     return long_chain_num
+
+
+def lattice_paths(height, width):
+    '''
+    @lattice_paths
+    Function finds how many routes there are to get from the top left corner of the lattice to the bottom right corner using only down and right movements
+    
+    @Input
+    height: the height of the lattice
+    width: the width of the lattice
+    
+    @Output
+    num_paths: the number of paths to the bottom right corner
+    '''
+    lattice = np.zeros((height + 1, width + 1), dtype='int64')
+    lattice[:,height:height+1] = 1
+    lattice[width:] = 1
+    lattice[height, width] = 0
+
+    for i in range(height - 1, -1, -1):
+        for j in range(width - 1, -1, -1):
+            lattice[i, j] = lattice[i, j + 1] + lattice[i + 1, j]
+
+    print(lattice)
+
+    return lattice[0, 0]

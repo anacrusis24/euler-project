@@ -1,6 +1,6 @@
 '''
 ---------- main.py ----------
-Time    :  2022/05/21 12:49:51
+Time    :  2022/05/22 09:14:46
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -24,7 +24,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 14
+    num_problems = 15
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -122,6 +122,11 @@ if __name__ == '__main__':
         elif problem_to_solve == 14:
             long_chain_num = longest_collatz_chain(1000000)
             display_results(problem_header, 'display/problem_statements_11_20/problem_statement_14.txt', problem_to_solve, long_chain_num)
+
+        ### Euler Problem 15 ###
+        elif problem_to_solve == 15:
+            paths = lattice_paths(20, 20)
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_15.txt', problem_to_solve, paths)
 
 
         # Let user decide weather to keep solving or not 
