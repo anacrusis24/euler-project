@@ -244,3 +244,61 @@ def first_n_digits_sum(n):
             remainder = int(col_sum[:(len(col_sum)-1)])
 
     return running_sum[:n]
+
+
+def collatz_sequence(start_num):
+    '''
+    @collatz_sequence
+    Function generates the Collatz sequence for the given starting number
+    
+    @Input
+    start_num: the starting number for the collatz_sequence
+    
+    @Output
+    sequence: the collatz sequence
+    '''
+    sequence = [start_num]
+
+    curr_num = start_num
+    while curr_num != 1:
+        if curr_num % 2 == 0:
+            curr_num /= 2
+        else:
+            curr_num = 3 * curr_num + 1
+        
+        sequence.append(int(curr_num))
+    
+    return sequence
+
+
+def longest_collatz_chain(max_start_num):
+    '''
+    @longest_collatz_chain
+    Function finds the starting number that produces the longest Collatz chain
+    
+    @Input
+    max_start_num: the max possible starting number
+    
+    @Output
+    long_chain_num: the number that produces the longest chain
+    '''
+    longest_chain = 0
+    long_chain_num = 0
+
+    for i in range(1, max_start_num):
+        curr_num = i
+        count = 1
+
+        while (curr_num != 1):
+            if curr_num % 2 == 0:
+                curr_num /= 2
+                count += 1
+            else:
+                curr_num = 3 * curr_num + 1
+
+        # Find number that produces longest chain
+        if count > longest_chain:
+            longest_chain = count
+            long_chain_num = i
+
+    return long_chain_num

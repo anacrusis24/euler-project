@@ -24,7 +24,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 13
+    num_problems = 14
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -117,6 +117,11 @@ if __name__ == '__main__':
         elif problem_to_solve == 13:
             n_digits = first_n_digits_sum(10)
             display_results(problem_header, 'display/problem_statements_11_20/problem_statement_13.txt', problem_to_solve, n_digits)
+
+        ### Euler Problem 14 ###
+        elif problem_to_solve == 14:
+            long_chain_num = longest_collatz_chain(1000000)
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_14.txt', problem_to_solve, long_chain_num)
 
 
         # Let user decide weather to keep solving or not 

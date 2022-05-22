@@ -34,4 +34,11 @@ def test_euler_13():
     first_10_digit = first_n_digits_sum(10)
     assert first_10_digit == '5537376230'
 
+def test_euler_14():
+    long_chain_num = longest_collatz_chain(5)
+    assert long_chain_num == 3
+    
 ##### My Tests #####
+def test_collatz_sequence():
+    sequence = collatz_sequence(13)
+    assert sequence == [13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
