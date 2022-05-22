@@ -30,4 +30,8 @@ def test_euler_12():
     tri_num = tri_num_divisor(5)
     assert tri_num == 28
 
+def test_euler_13():
+    first_10_digit = first_n_digits_sum(10)
+    assert first_10_digit == '5537376230'
+
 ##### My Tests #####
