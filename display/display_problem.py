@@ -24,7 +24,7 @@ def display_results(problem_header, problem_statement_path, problem_to_solve, an
     None
     '''
     # Read the .txt file
-    with open(problem_statement_path) as f:
+    with open(problem_statement_path, encoding='utf-8') as f:
         statement = f.read()
 
     f.close()
