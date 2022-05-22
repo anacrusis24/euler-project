@@ -7,3 +7,6 @@ __pycache__
 
 # Recovery Key
 recovery_key.txt
+
+# VS code unit testing
+.vscode
