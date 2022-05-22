@@ -325,6 +325,24 @@ def lattice_paths(height, width):
         for j in range(width - 1, -1, -1):
             lattice[i, j] = lattice[i, j + 1] + lattice[i + 1, j]
 
-    print(lattice)
-
     return lattice[0, 0]
+
+
+def power_digit_sum(power):
+    '''
+    @power_digit_sum
+    Function calculates the sum of the digits of the number 2^power
+    
+    @Input
+    power: the power to raise 2 to
+    
+    @Output
+    pwd_sum: the sum of the digits of the power of 2
+    '''
+    pwd_sum = 0
+    str_num = str(2**power)
+
+    for digit in str_num:
+        pwd_sum += int(digit)
+
+    return pwd_sum

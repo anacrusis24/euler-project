@@ -41,6 +41,10 @@ def test_euler_14():
 def test_euler_15():
     paths = lattice_paths(2, 2)
     assert paths == 6
+
+def test_euler_16():
+    pwd_sum = power_digit_sum(15)
+    assert pwd_sum == 26
     
 ##### My Tests #####
 def test_collatz_sequence():

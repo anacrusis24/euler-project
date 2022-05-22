@@ -24,7 +24,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 15
+    num_problems = 16
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -127,6 +127,11 @@ if __name__ == '__main__':
         elif problem_to_solve == 15:
             paths = lattice_paths(20, 20)
             display_results(problem_header, 'display/problem_statements_11_20/problem_statement_15.txt', problem_to_solve, paths)
+
+        ### Euler Problem 16 ###
+        elif problem_to_solve == 16:
+            pwd_sum = power_digit_sum(1000)
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_16.txt', problem_to_solve, pwd_sum)
 
 
         # Let user decide weather to keep solving or not 
