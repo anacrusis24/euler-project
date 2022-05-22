@@ -12,7 +12,7 @@ Desc    :  The main program to see the answers to the Euler problems
 import numpy as np
 import os
 from euler_problem.euler_problem_1_10 import *
-from display.problem_statement import *
+from euler_problem.euler_problem_11_20 import *
 from display.display_problem import *
 from exception.exception import *
 
@@ -20,7 +20,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 10
+    num_problems = 11
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -98,6 +98,11 @@ if __name__ == '__main__':
         elif problem_to_solve == 10:
             prime_sum = sum_prime(2000000)
             display_results(problem_header, 'display/problem_statements_1_10/problem_statement_10.txt', problem_to_solve, prime_sum)
+
+        ### Euler Problem 11 ###
+        elif problem_to_solve == 11:
+            max_prod = greatest_product(4)
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_11.txt', problem_to_solve, max_prod)
 
 
         # Let user decide weather to keep solving or not 
