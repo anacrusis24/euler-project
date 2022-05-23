@@ -45,6 +45,10 @@ def test_euler_15():
 def test_euler_16():
     pwd_sum = power_digit_sum(15)
     assert pwd_sum == 26
+
+def test_euler_17():
+    letter_count = number_letter_count(5)
+    assert letter_count == 19
     
 ##### My Tests #####
 def test_collatz_sequence():

@@ -289,6 +289,7 @@ def longest_collatz_chain(max_start_num):
         curr_num = i
         count = 1
 
+        # The collatz part
         while (curr_num != 1):
             if curr_num % 2 == 0:
                 curr_num /= 2
@@ -316,11 +317,13 @@ def lattice_paths(height, width):
     @Output
     num_paths: the number of paths to the bottom right corner
     '''
+    # Make lattice with boundary conditions
     lattice = np.zeros((height + 1, width + 1), dtype='int64')
     lattice[:,height:height+1] = 1
     lattice[width:] = 1
     lattice[height, width] = 0
 
+    # Fill in lattice al la pascals triangle
     for i in range(height - 1, -1, -1):
         for j in range(width - 1, -1, -1):
             lattice[i, j] = lattice[i, j + 1] + lattice[i + 1, j]
@@ -342,7 +345,62 @@ def power_digit_sum(power):
     pwd_sum = 0
     str_num = str(2**power)
 
+    # Peel off each digit and add to sum
     for digit in str_num:
         pwd_sum += int(digit)
 
     return pwd_sum
+
+
+def number_letter_count(max_num):
+    '''
+    @number_letter_count
+    Function counts the sum of letters for each spelled number up to the max_num (inclusive)
+    
+    @Input
+    max_num: the max number to include in the sum
+    
+    @Output
+    letter_count: the letter count of the sum 
+    '''
+    # Dict to hold small counts
+    ones_dict = {0:'', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five', 6:'six', 7:'seven', 8:'eight', 9:'nine'}
+    teens_dict = {10:'ten', 11:'eleven', 12:'twelve', 13:'thirteen', 14:'fourteen', 15:'fifteen', 16:'sixteen', 17:'seventeen', 18:'eighteen', 19:'nineteen'}
+    tens_dict = {20:'twenty', 30:'thirty', 40:'forty', 50:'fifty', 60:'sixty', 70:'seventy', 80:'eighty', 90:'ninety'}
+    hundreds_dict = {100:'hundred'}
+    thousands_dict = {1000:'thousand'}
+
+    # Initialize running count
+    letter_count = 0
+
+    for i in range(1, max_num + 1):
+        # Get current letter count
+        if i < 10:
+            curr_count = len(ones_dict[i])
+        elif i < 20:
+            curr_count = len(teens_dict[i])
+        elif i < 100:
+            first_digit = str(i)[0]
+            second_digit = str(i)[1]
+            curr_count = len(tens_dict[int(first_digit + '0')]) + len(ones_dict[int(second_digit)])
+        elif i < 1000:
+            first_digit = str(i)[0]
+            second_digit = str(i)[1]
+            third_digit = str(i)[2]
+            if (second_digit == '0') and (third_digit == '0'):
+                curr_count = len(ones_dict[int(first_digit)]) + len(hundreds_dict[100])
+            elif (second_digit == '0') and (third_digit != '0'):
+                curr_count =  len(ones_dict[int(first_digit)]) + len(hundreds_dict[100]) + len('and') + len(ones_dict[int(third_digit)])
+            elif (second_digit == '1'):
+                curr_count =  len(ones_dict[int(first_digit)]) + len(hundreds_dict[100]) + len('and') + len(teens_dict[int(str(i)[1:])])
+            else:
+                curr_count =  len(ones_dict[int(first_digit)]) + len(hundreds_dict[100]) + len('and') + len(tens_dict[int(second_digit + '0')]) + len(ones_dict[int(third_digit)])
+        else:
+            first_digit = str(i)[0]
+            second_digit = str(i)[1]
+            curr_count = len(ones_dict[int(first_digit)]) + len(thousands_dict[1000])
+
+        # Add to running sum
+        letter_count += curr_count
+
+    return letter_count
