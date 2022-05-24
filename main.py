@@ -1,6 +1,6 @@
 '''
 ---------- main.py ----------
-Time    :  2022/05/22 09:14:46
+Time    :  2022/05/23 19:44:15
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -24,7 +24,7 @@ from exception.exception import *
 ##### Main Program #####
 if __name__ == '__main__':
     # Global variables we need for display
-    num_problems = 17
+    num_problems = 18
     problem_prompt = 'Enter which Euler problem you would like to solve: '
     solve_prompt = 'Would you like to solve more problems (y/n): '
 
@@ -138,6 +138,10 @@ if __name__ == '__main__':
             letter_count = number_letter_count(1000)
             display_results(problem_header, 'display/problem_statements_11_20/problem_statement_17.txt', problem_to_solve, letter_count)
 
+        ### Euler Problem 18 ###
+        elif problem_to_solve == 18:
+            path_sum = max_path_sum()
+            display_results(problem_header, 'display/problem_statements_11_20/problem_statement_18.txt', problem_to_solve, path_sum)
 
         # Let user decide weather to keep solving or not 
         while True:

@@ -1,6 +1,6 @@
 '''
 ---------- test_euler_11_20.py ----------
-Time    :  2022/05/22 09:14:46
+Time    :  2022/05/23 19:44:15
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -49,6 +49,10 @@ def test_euler_16():
 def test_euler_17():
     letter_count = number_letter_count(5)
     assert letter_count == 19
+
+def test_euler_18():
+    path_sum = max_path_sum()
+    assert path_sum == 1074
     
 ##### My Tests #####
 def test_collatz_sequence():

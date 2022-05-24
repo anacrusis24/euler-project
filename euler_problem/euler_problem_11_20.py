@@ -1,6 +1,6 @@
 '''
 ---------- euler_problem_11_20.py ----------
-Time    :  2022/05/22 09:14:46
+Time    :  2022/05/23 19:44:15
 Version :  1.0
 Author  :  Austin Villegas 
 Github  :  https://github.com/anacrusis24
@@ -404,3 +404,55 @@ def number_letter_count(max_num):
         letter_count += curr_count
 
     return letter_count
+
+
+def max_path_sum():
+    '''
+    @max_path_sum
+    Function finds the maximum sum of the path from top to bottom in the triangle
+    
+    @Output
+    max_sum:
+    '''
+    str_triangle = '''
+75
+95 64
+17 47 82
+18 35 87 10
+20 04 82 47 65
+19 01 23 75 03 34
+88 02 77 73 07 63 67
+99 65 04 28 06 16 70 92
+41 41 26 56 83 40 80 70 33
+41 48 72 33 47 32 37 16 94 29
+53 71 44 65 25 43 91 52 97 51 14
+70 11 33 28 77 73 17 78 39 68 17 57
+91 71 52 38 17 14 91 43 58 50 27 29 48
+63 66 04 68 89 53 67 30 73 16 69 87 40 31
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
+'''
+
+    # Create array of numbers
+    str_triangle = np.array(str_triangle.splitlines())[1:]
+    triangle = []
+
+    # Convert to int and separate values
+    for line in str_triangle:
+        line = np.array(line.split()).astype('int64')
+        triangle.append(line)
+    
+    triangle = np.array(triangle)
+    curr_row = []
+
+    for i in range(len(triangle) - 1, 0, -1):
+        # Get the two rows to do the addition
+        top_row = triangle[i - 1]
+        bot_row = triangle[i]
+
+        for j in range(len(top_row)):
+            num_sum = top_row[j] + max(bot_row[j], bot_row[j + 1])
+            curr_row.append(num_sum)
+
+        triangle[i - 1] = np.array(curr_row)
+        curr_row = []
+    return triangle[0][0]
